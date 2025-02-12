@@ -1,6 +1,6 @@
 <?php
 include("db_contect.php");
-$result = useQuery($con, "SELECT  categories.category_id, categories.category_name, COUNT(dishes.category_id) AS dishes FROM categories LEFT JOIN dishes ON categories.category_id = dishes.category_id GROUP BY dishes.category_id, categories.category_id, categories.category_name", true);
+$result = useQuery($con, "SELECT  categories.category_id, categories.category_name, COUNT(dishes.category_id) AS dishes FROM categories LEFT JOIN dishes ON categories.category_id = dishes.category_id GROUP BY  categories.category_id, categories.category_name ORDER BY dishes DESC", true);
 ?>
 
 <!DOCTYPE html>
