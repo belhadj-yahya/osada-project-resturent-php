@@ -32,6 +32,21 @@
             </form>
             <button>Add New Dish</button>
             </div>
+            <dialog>
+              <div class="cont">
+                <form method="POST">
+                    <input type="text" name="dishName" id="">
+                    <input type="number" name="dishPrice" id="">
+                    <select name="category" id="">
+                        <?php
+                          
+                        ?>
+                    </select>
+                    <input type="submit" value="Add">
+                </form>
+              </div>
+
+            </dialog>
             
             <div class="dish">
                 <?php
