@@ -1,6 +1,6 @@
 <?php
 include("db_contect.php");
-$result = useQuery($con, "SELECT  categories.category_id, categories.category_name, COUNT(dishes.category_id) AS dishes FROM categories LEFT JOIN dishes ON categories.category_id = dishes.category_id GROUP BY dishes.category_id, categories.category_id, categories.category_name", true);
+$result = useQuery($con, "SELECT  categories.category_id, categories.category_name, COUNT(dishes.category_id) AS dishes FROM categories LEFT JOIN dishes ON categories.category_id = dishes.category_id GROUP BY  categories.category_id, categories.category_name ORDER BY dishes DESC", true);
 ?>
 
 <!DOCTYPE html>
@@ -81,19 +81,19 @@ $result = useQuery($con, "SELECT  categories.category_id, categories.category_na
                         echo "we are here baby" . "<br>";
                         $id = $_POST["did"];
                         useQuery($con, "DELETE FROM categories where category_id = $id;", false);
-                        $result = useQuery($con, "SELECT  categories.category_id, categories.category_name, COUNT(dishes.category_id) AS dishes FROM categories LEFT JOIN dishes ON categories.category_id = dishes.category_id GROUP BY categories.category_id, categories.category_name ", true);
+                        $result = useQuery($con, "SELECT  categories.category_id, categories.category_name, COUNT(dishes.category_id) AS dishes FROM categories LEFT JOIN dishes ON categories.category_id = dishes.category_id GROUP BY categories.category_id, categories.category_name ORDER BY dishes DESC ", true);
                         showCategorys($result, "");
                     } elseif (isset($_POST["addCategory"])) {
                         $valueToAdd = $_POST["add"];
                         useQuery($con, "INSERT INTO categories(category_name) VALUES ('$valueToAdd')", false);
-                        $res  = useQuery($con, "SELECT  categories.category_id, categories.category_name, COUNT(dishes.category_id) AS dishes FROM categories LEFT JOIN dishes ON categories.category_id = dishes.category_id GROUP BY categories.category_id, categories.category_name", TRUE);
+                        $res  = useQuery($con, "SELECT  categories.category_id, categories.category_name, COUNT(dishes.category_id) AS dishes FROM categories LEFT JOIN dishes ON categories.category_id = dishes.category_id GROUP BY categories.category_id, categories.category_name ORDER BY dishes DESC", TRUE);
                         showCategorys($res, "");
                         echo "before we see the array" . "<br>";
                     } elseif (isset($_POST["update"])) {
                         $newName = $_POST["newName"];
                         $id = $_POST["id"];
                         useQuery($con, "UPDATE categories SET category_name = '$newName' WHERE category_id = $id", false);
-                        $res = useQuery($con, "SELECT  categories.category_id, categories.category_name, COUNT(dishes.category_id) AS dishes FROM categories LEFT JOIN dishes ON categories.category_id = dishes.category_id GROUP BY categories.category_id, categories.category_name", true);
+                        $res = useQuery($con, "SELECT  categories.category_id, categories.category_name, COUNT(dishes.category_id) AS dishes FROM categories LEFT JOIN dishes ON categories.category_id = dishes.category_id GROUP BY categories.category_id, categories.category_name ORDER BY dishes DESC", true);
                         showCategorys($res, "");
                     }
                 } else {
