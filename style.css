@@ -1,7 +1,12 @@
+:root{
+    --mainColor:#8d85ff;
+    --seconderyColor:#2f1c6a;
+}
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    color: var(--seconderyColor);
 }
 body{
     display: flex;
@@ -9,21 +14,27 @@ body{
 .content{
     width: 100%;
     min-height: 100vh;
-    background-color: aquamarine;
+    /* background-color: aquamarine; */
 }
-#categories{
-    background-color: gray;
+.firstForm{
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-around;
 }
-.item{
+.item, .dishes{
     display: flex;
     align-items: center;
     justify-content: space-around;
-    background-color: cadetblue;
-    min-height: 50px;
+    background-color: var(--mainColor);
+    min-height: 80px;
     margin: 20px;
+    border-radius: 20px;
 }
 .item p{
     width: calc(100% / 3);
+}
+.dishes p{
+    width: calc(100% / 4);
 }
 .settings button{
     margin: 10px;
@@ -50,4 +61,50 @@ aside nav li a{
 }
 aside:hover{
     box-shadow: 10px 10PX 20PX BLACK;
+}
+dialog {
+    margin: auto;
+    width: 400px;
+    padding: 20px;
+    border: 2px solid var(--mainColor);
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  dialog h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: var(--seconderyColor);
+  }
+   input, button{
+    cursor: pointer;
+     padding: 10px 20px;
+     background-color: white;
+     border:  3px solid var(--mainColor);
+     color: var(--seconderyColor);
+     font-weight: bold;
+     margin-bottom: 10px;
+     border-radius: 50px;
+  }
+input[type="submit"]:hover,button:hover{
+    transform: scale(1.1);
+}
+.dailogCont{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.dailogCont form input[type="text"]{
+    margin-right: 20px;
+}
+
+/*dishes part*/
+
+.settinges{
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
