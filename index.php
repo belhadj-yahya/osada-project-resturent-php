@@ -1,110 +1,63 @@
 <?php
 include("db_contect.php");
-$result = useQuery($con, "SELECT  categories.category_id, categories.category_name, COUNT(dishes.category_id) AS dishes FROM categories LEFT JOIN dishes ON categories.category_id = dishes.category_id GROUP BY  categories.category_id, categories.category_name ORDER BY dishes DESC", true);
-?>
 
+/*
+passwords 
+1 : john
+2 : Jane
+3 : Bob
+4 : Alice
+5 : Charlie
+THIS REST FROM HERE ARE IN THE HOME PC DONT FORGET THAT YAHYA
+6 :
+*/
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="styles/main_page.css">
+    <link rel="stylesheet" href="styles/footer.css">
+    <title>shope</title>
 </head>
 
 <body>
-    <aside>
-        <nav>
-            <li><a href="#dash">dashBord</a></li>
-            <li><a href="#categories">categories</a></li>
-            <li><a href="#dishes">dishes</a></li>
-            <li><a href="#orders">orders</a></li>
-        </nav>
-    </aside>
-    <div class="content">
-        <div id="dash"></div>
-        <div id="categories">
-            <form method="POST">
-                <input type="text" name="categorey" id="">
-                <input type="submit" value="search" name="findcat">
-                <input type="text" name="add" id="">
-                <input type="submit" value="add Category" name="addCategory">
-            </form>
-            <div class="category">
-                <?php
-                function useQuery($con, $query, $sheck)
-                {
-                    if ($sheck) {
-                        $result = $con->query($query);
-                        $result = $result->fetchAll(PDO::FETCH_ASSOC);
-                        return $result;
-                    } else {
-                        $con->exec($query);
-                    }
-                }
-                function showCategorys($result, $niddel)
-                {
-                    foreach ($result as $catigory) {
-                        $id = $catigory["category_id"];
-                        if (str_contains(trim(strtolower($catigory["category_name"])), trim(strtolower($niddel)))) {
-                            echo "<div class='item'>";
-                            echo  "<p>" . "category: " . $catigory["category_name"] . "</p>";
-                            echo  "<p>" . "Dishes: " . $catigory["dishes"] . "</p>";
-                            echo "<div class='settings'>";
-                            echo "<button class='remove'>DELETE</button>";
-                            echo "<button class='changeTo'>modify</button>";
-                            echo "</div>";
-                            echo "</div>";
-                            echo "<dialog class='deleteDailog'>";
-                            echo "<p>are you sure you want to delete </p>";
-                            echo "<form method='POST'>";
-                            echo "<input type='hidden' name='did' value='$id'>";
-                            echo "<input type='submit' name='delete' value='sure'>";
-                            echo "</form>";
-                            echo "<button class='close'>stop</button>";
-                            echo "</dialog>";
-                            echo "<dialog class='updated'>";
-                            echo "<form method='POST'>";
-                            echo "<input type='hidden' name='id' value='$id'>";
-                            echo "<input type='text' name='newName'>";
-                            echo "<input type='submit' name='update' value='update'>";
-                            echo "</form>";
-                            echo "</dialog>";
-                        }
-                    }
-                }
-                if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                    if (isset($_POST["findcat"])) {
-                        showCategorys($result, $_POST["categorey"]);
-                    } elseif (isset($_POST["delete"])) {
-                        echo "we are here baby" . "<br>";
-                        $id = $_POST["did"];
-                        useQuery($con, "DELETE FROM categories where category_id = $id;", false);
-                        $result = useQuery($con, "SELECT  categories.category_id, categories.category_name, COUNT(dishes.category_id) AS dishes FROM categories LEFT JOIN dishes ON categories.category_id = dishes.category_id GROUP BY categories.category_id, categories.category_name ORDER BY dishes DESC ", true);
-                        showCategorys($result, "");
-                    } elseif (isset($_POST["addCategory"])) {
-                        $valueToAdd = $_POST["add"];
-                        useQuery($con, "INSERT INTO categories(category_name) VALUES ('$valueToAdd')", false);
-                        $res  = useQuery($con, "SELECT  categories.category_id, categories.category_name, COUNT(dishes.category_id) AS dishes FROM categories LEFT JOIN dishes ON categories.category_id = dishes.category_id GROUP BY categories.category_id, categories.category_name ORDER BY dishes DESC", TRUE);
-                        showCategorys($res, "");
-                        echo "before we see the array" . "<br>";
-                    } elseif (isset($_POST["update"])) {
-                        $newName = $_POST["newName"];
-                        $id = $_POST["id"];
-                        useQuery($con, "UPDATE categories SET category_name = '$newName' WHERE category_id = $id", false);
-                        $res = useQuery($con, "SELECT  categories.category_id, categories.category_name, COUNT(dishes.category_id) AS dishes FROM categories LEFT JOIN dishes ON categories.category_id = dishes.category_id GROUP BY categories.category_id, categories.category_name ORDER BY dishes DESC", true);
-                        showCategorys($res, "");
-                    }
-                } else {
-                    showCategorys($result, "");
-                }
-                ?>
+    <?php include("user_nav.php")?>
+    <main>
+        <h1 class="h1">Welcome to foodYA — Where Delicious Food Meets Perfect Moments!</h1>
+        <section class="part1">
+            <img src="user_images/imag_1.svg" class="img1" alt="">
+            <div class="wrap1">
+                <h1>Delicious Food, Delivered to You</h1>
+                <p>Enjoy delicious food from your favorite restaurants, right at your doorstep. Fresh, fast, and always satisfying.</p>
             </div>
+        </section>
+        <h1 class="first_h1">Why Wait? Bring the Best to Your Table Today!</h1>
+        <p class="first_p">From fresh ingredients to mouthwatering dishes, our food delivery service is designed to make your life easier and more delicious. Whether you're craving pizza, sushi, or burgers, we’ve got you covered. Order now and taste the difference!</p>
+        <section class="part2">
+            <img src="user_images/imag_2.svg" class="img2" alt="get it now">
+            <div class="images">
+                <img src="food_images/burger.webp" alt="">
+                <img src="food_images/cake.jpg" alt="">
+                <img src="food_images/cocktail.jpg" alt="">
+                <img src="food_images/makarona.jpg" alt="">
+                <img src="food_images/pizza.jpg" alt="">
+                <img src="food_images/sushi2.jpg" alt="">
+            </div>
+        </section>
+        <section class="part3">
+            <div class="wrap2">
+                <h1>Fresh Ingredients, Tasty Results</h1>
+                <p>We use only the finest, fresh ingredients to bring you flavorful, healthy meals. Every dish is crafted with care to ensure you get the best taste and quality. Because good food starts with great ingredients!</p>
+            </div>
+            <img src="user_images/imag_4.svg" class="img3" alt="">
+        </section>
+    </main>
+    <?php include("footer copy.php") ?>
 
-        </div>
-    </div>
-    <script src="script.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,133 @@
+*{
+    margin: 0;
+    padding: 0;
+    color: var(--seconderyColor)
+
+}
+:root{
+    --mainColor:#8d85ff;
+    --seconderyColor:#2f1c6a;
+}
+main{
+    margin-left: 200px;
+    display: flex;
+    flex-direction: column;
+}
+.content{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+
+}
+.id{
+    margin-top: 10px;
+}
+.content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.order{
+    border-radius: 20px;
+    /* background: linear-gradient(160deg, #9275e6, var(--mainColor)); */
+    width: 300px;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+    transition-duration: 0.5s;
+}
+
+.div_form{
+    display: flex;
+    flex-wrap: wrap;
+}
+.order:hover{
+    /* background: linear-gradient(360deg, #9275e6, var(--mainColor)); */
+    transform: scale(1.1);
+}
+input, button,select{
+    cursor: pointer;
+     padding: 10px 20px;
+     background-color: white;
+     border:  3px solid var(--mainColor);
+     color: var(--seconderyColor);
+     font-weight: bold;
+     margin-bottom: 10px;
+     border-radius: 50px;
+  }
+input[type="submit"]:hover,button:hover{
+    transform: scale(1.1);
+}
+ .settings{
+    width: 100%;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+ }
+ .settings .form1{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+ }
+dialog{
+    border: none;
+    border-radius: 20px;
+    margin: auto;
+}
+.details_Dailog{
+    width: 400px;
+    min-width: 100px;
+    min-height: 300px;
+    padding: 20px;
+    background: linear-gradient(160deg, #ac93f5, var(--mainColor));
+   
+}
+.delete_dialog div{
+    background-color: rgb(186, 59, 59);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    height: 200px;
+}
+
+.state_change_dialog div{
+    width: 400px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h3{
+        margin-bottom: 20px;
+    }
+}
+ .details_Dailog div{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+    font-weight: bold;
+
+ }
+ .orange{
+    background-color: orange !important;
+ }
+ .lightblue{
+    background-color: lightblue !important;
+ }
+ .lightgreen{
+    background-color: lightgreen !important;
+ }
+ .red{
+    background-color: red !important;
+ }

@@ -1,0 +1,130 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root {
+    --mainColor: #8d85ff;
+    --seconderyColor: #2f1c6a;
+    --canvesBackground: #b4a6ff;
+    --tableBackground: #ddd;
+}
+body{
+    background-color: var(--tableBackground);
+}
+.error{
+    font-weight: bold;
+    font-size: 30px;
+    color: var(--seconderyColor);
+}
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.intro{
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 350px;
+    margin: 100px 0px 70px 0px;
+}
+.intro img{
+    width: 370px;
+    height: auto;
+}
+label{
+    font-size: 20px;
+}
+.intro h1{
+    max-width: 40ch;
+    color: var(--seconderyColor);
+}
+.intro::before {
+    content: ''; 
+    display: block; 
+    background-color: var(--canvesBackground);
+    width: 100%; 
+    height: 100%; 
+    position: absolute; 
+    z-index: -1;
+    transform: skewY(2deg);
+}
+.orders{
+    padding-inline: 20px;
+}
+
+input, button {
+    text-align: center;
+    font-size: 18px;
+    text-align: center;
+    border: 2px solid var(--seconderyColor);
+    color: var(--seconderyColor);
+    background-color: white;
+    font-weight: bold;
+    border-radius: 50px;
+    margin-bottom: 10px;
+    width: 137px;
+    height: 42px;
+}
+.dumy_img{
+    width: 100px;
+    border-radius: 20px;
+    border: 2px solid var(--seconderyColor);
+    height: 100%;
+}
+input[type="submit"]{
+    cursor: pointer;
+}
+input[type="submit"]:hover{
+    transform: scale(1.1);
+}
+.h1{
+    margin-left: 30px;
+    font-size: 40px;
+    color: var(--seconderyColor);
+}
+.order,.last_step{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--canvesBackground);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.last_step{
+    background-color: var(--tableBackground);
+    border: 2px solid var(--seconderyColor);
+}
+button{
+    padding: 10px 20px;
+}
+
+.order form{
+    color: var(--seconderyColor);
+    display: flex;
+    flex-direction: column;
+}
+.hold{
+    margin-bottom: 30px;
+    height: 65px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+input[name="order_name[]"]{
+    overflow-x: scroll;
+}
+.last_step{
+    color: var(--seconderyColor);
+   justify-content: center;
+   align-items: center;
+   gap: 20px;
+   font-weight: bold;
+   font-size: 40px;
+   width: 300px;
+}

@@ -1,0 +1,89 @@
+*{
+    color: var(--seconderyColor);
+}
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 97vh;
+    background: linear-gradient(100deg, white,#ddd,#b4a6ff);
+}
+:root {
+    --mainColor: #8d85ff;
+    --seconderyColor: #2f1c6a;
+    --canvesBackground: #b4a6ff;
+    --tableBackground: #ddd;
+}
+main{
+    margin-inline: auto;
+    border: 2px solid var(--seconderyColor);
+    border-radius: 20px;
+    display: flex;
+    width: 700px;
+    justify-content: center;
+}
+.items{
+    border-radius: 20px 0px 0px 20px;
+    background-color: #f1f0f0;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.item{
+    width: 80%;
+    border-bottom: 1px solid var(--seconderyColor);
+}
+.item p{
+    margin-left: 20px;
+}
+.information{
+    border-radius: 0px 20px 20px 0px;
+    background-color: #f1f0f0;
+    border-left: 1px solid var(--seconderyColor);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+input[name="end_order"],input[name="back"],select,input[name="shoosen_location"]{
+    cursor: pointer;
+    /* width: 200px; */
+    background-color: white;
+    border: 2px solid var(--seconderyColor);
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 50px;
+    transition-duration: 0.2s;
+}
+input[name="end_order"]:hover,input[name="back"]:hover{
+    background-color: var(--seconderyColor);
+    color: white;
+    transform: scale(1.1);
+    border-color: white;
+}
+input[name="back"]{
+    margin: 10px 20px 30px 20px;
+    position: fixed;
+    top: 10%;
+    left: 5%;
+}
+input[name="end_order"]{
+    margin-bottom: 20px;
+}
+.H22{
+    text-align: center;
+}
+.information form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+.information form input[type="text"]{
+    background-color: white;
+    border: 2px solid var(--seconderyColor);
+    padding: 10px 20px;
+    border-radius: 50px;
+    width: 200px;
+}

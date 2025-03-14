@@ -6,8 +6,7 @@ $pass = ""; // password
 try {
     $con = new PDO($sdn, $user, $pass);
     $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-    // echo "connected ok";
+    
 } catch (PDOException $error) {
     echo "field " . $error->getMessage();
 }

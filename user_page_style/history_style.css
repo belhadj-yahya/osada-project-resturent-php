@@ -1,0 +1,165 @@
+.history{
+    display: flex;
+    flex-wrap: wrap;
+}
+:root {
+    --mainColor: #8d85ff;
+    --seconderyColor: #2f1c6a;
+    --canvesBackground: #b4a6ff;
+    --tableBackground: #ddd;
+}
+.notifation{
+    padding-inline: 20px;
+    position: fixed;
+    background-color: var(--tableBackground);
+    box-shadow: 1px 1px 20px 5px var(--seconderyColor);
+    border-radius: 20px;
+    /* height: auto; */
+    height: 200px;
+    z-index: 2;
+    right: 0;
+    bottom: 0;
+    max-height: 300px;
+    overflow-y: scroll;
+    width: 40%;
+}
+.not{
+    min-height: 70px;
+    border-bottom: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+.not form input{
+    cursor: pointer;
+}
+.not form input:hover{
+    background-color: white;
+    color: var(--seconderyColor);
+    border: 2px solid var(--seconderyColor);
+}
+.text{
+    font-size: 20px;
+}
+.text span{
+    color: var(--seconderyColor);
+    font-weight: bold;
+}
+.history div{
+    font-weight: bold;
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 20px;
+    padding-top: 15px;
+    overflow-y: auto;
+    align-items: center;
+    background-color: var(--canvesBackground);
+    margin: 15px;
+    border-radius: 20px;
+    width: 300px;
+    max-width: 500px;
+    /* min-height: 400px; */
+    height: 400px;
+    min-width:  100px;
+}
+input[type="submit"]{
+    background-color: #b4a6ff;
+    border: 1px solid #2f1c6a;
+    color: #2f1c6a;
+    padding: 10px 25px;
+    border-radius: 20px;
+    font-weight: bold;
+    transition-duration: 0.2;
+}
+.history div::-webkit-scrollbar {
+    width: 7px; /* Width of the scrollbar */
+  }
+  
+.history div::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Background color of the track */
+    border-radius: 5px; /* Rounded corners for the track */
+  }
+  
+.history div::-webkit-scrollbar-thumb {
+    background: #888; /* Color of the thumb */
+    border-radius: 5px; /* Rounded corners for the thumb */
+  }
+  
+  /* Optional: Hover effect for the thumb */
+.history div::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Darker color on hover */
+  }
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--tableBackground);
+}
+section{
+    position: relative;
+    width: 100%;
+    height: 300px;
+    margin: 0px 0px 200px 0px;
+    transform: scaleY(20deg);
+}
+
+section img{
+    position: absolute;
+    left: 10%;
+    width: 40%;
+}
+section p{
+    position: absolute;
+    left: 60%;
+    top: 30%;
+    color: var(--seconderyColor);
+    font-weight: bold;
+    font-size: 50px;
+    width: 20ch;
+}
+.importent{
+    margin: 20px 0px 200px 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.importent{
+    width: 100%;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.settings{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 300px;
+}
+select{
+    text-align: center;
+    width: 170px;
+    height: 50px;
+    border: 2px solid var(--seconderyColor);
+    color: var(--seconderyColor);
+    background-color: white;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.Show_history{
+    text-align: center;
+    background-color: white;
+    font-weight: bold;
+    font-size: 20px;
+    width: 100px;
+    height: 50px;
+    color: var(--seconderyColor);
+    border: 2px solid var(--seconderyColor);
+    border-radius: 50px;
+}

@@ -1,0 +1,107 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: var(--seconderyColor)
+}
+:root{
+    --mainColor:#8d85ff;
+    --seconderyColor:#2f1c6a;
+}
+body{
+    display: flex;
+}
+input, button,select{
+    cursor: pointer;
+     padding: 10px 20px;
+     background-color: white;
+     border:  3px solid var(--mainColor);
+     color: var(--seconderyColor);
+     font-weight: bold;
+     border-radius: 50px;
+  }
+input[type="submit"]:hover,button:hover{
+    transform: scale(1.1);
+}
+
+dialog{
+    margin: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+dialog form input[type="text"]{
+    margin-right: 20px;
+}
+
+/*main*/
+
+main {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin-left: 200px;
+}
+/*dish*/
+.dishes{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+}
+.dishe{
+    width: 100%;
+    min-height: 100px;
+    border-radius: 20px;
+    margin: 20px 0px;
+    max-width: 100%;
+    background: linear-gradient(160deg, #ac93f5, var(--mainColor));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+.dishe p{
+    width: 200px;
+    min-width: 100px;
+}
+.dishe .settings{
+    max-width: 200px;
+    display: flex;
+    
+    justify-content: flex-end;
+}
+.deleteDailog div, .modifyDailog div,.add_new_dish div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    form{
+        margin-top: 10px;
+    }
+}
+.search_and_add{
+    display: flex;
+    gap: 10px;
+}
+.modifyDailog div form,.add_new_dish div form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 20px;
+    align-items: center;
+}
+.new_dish_error, .dish_error{
+    margin-top: 20px;
+    font-size: 20px;
+    color: red;
+    font-weight: bold;
+    text-align: center;
+
+}

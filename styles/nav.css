@@ -1,0 +1,48 @@
+*{
+    font-family: Arial, sans-serif;
+}
+aside {
+    background-color: aliceblue;
+    display: flex;
+    position: fixed; /* Fixed positioning */
+    width: 200px;
+    min-width: 200px; /* Width of the aside */
+    height: 100vh; /* Full viewport height */
+}
+aside{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+aside nav{
+    display: flex;
+    gap: 30px;
+    flex-direction: column;
+    justify-content: center;
+}
+aside nav a {
+    /* width: 100%; */
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: large;
+    color: black;
+}
+aside:hover {
+    box-shadow: 8px 0px 7px rgba(0, 0, 0, 0.2);
+}
+.link:hover{
+    background-color: lightgray;
+}
+.link{
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.icon{
+    width: 30px;
+}
+.to{
+    width: 100px;
+}
